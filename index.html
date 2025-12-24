@@ -212,13 +212,21 @@
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="card-content">
-                    <h3>Industrial Soap Production Design</h3>
-                    <p>Designed a conceptual mass production line for soap manufacturing. Calculated heat transfer requirements for the saponification reactor.</p>
-                    <p class="tech-stack">Tools: AutoCAD, Mass Balance Calculations</p>
-                </div>
-            </div>
+           <div class="project-card">
+    <div class="card-content">
+        <h3>Industrial Soap Production Design (CH2170)</h3>
+        <p>Developed a comprehensive PFD for a large-scale soap manufacturing plant. Managed stream compositions, mass balances, and equipment selection (Saponification reactors, dryers, and finishing lines).</p>
+        <p class="tech-stack">Tools: PFD Standards, Mass Balance, Laboratory Practices</p>
+        
+        <button onclick="document.getElementById('pfd-modal').style.display='block'" class="btn" style="padding: 5px 15px; font-size: 0.8rem;">View Process Flow Diagram</button>
+    </div>
+</div>
+
+<div id="pfd-modal" style="display:none; position:fixed; z-index:2000; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.9); text-align:center; padding-top:50px;">
+    <span onclick="document.getElementById('pfd-modal').style.display='none'" style="position:absolute; right:35px; top:15px; color:white; font-size:40px; font-weight:bold; cursor:pointer;">&times;</span>
+    <img src="soap-pfd.png" style="max-width:90%; max-height:80%; border: 5px solid white;">
+    <p style="color:white; margin-top:15px;">Industrial Soap Manufacturing Process - CH2170 Lab Practice</p>
+</div>
 
             <div class="project-card">
                 <div class="card-content">
@@ -253,4 +261,5 @@
     </footer>
 
 </body>
+
 </html>
