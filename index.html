@@ -70,10 +70,13 @@
 
         /* Projects Grid */
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .project-card { background: var(--white); border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden; }
+        .project-card { background: var(--white); border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.3s; }
+        .project-card:hover { transform: translateY(-5px); }
         .card-content { padding: 20px; }
+        .card-content h3 { color: var(--primary-color); margin-top: 0; }
+        .tech-stack { font-size: 0.9rem; color: #666; font-style: italic; margin-top: 10px; }
 
-        /* Skills */
+        /* Skills Tags */
         .skills-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
         .skill-tag { background: #e0f2f1; color: var(--primary-color); padding: 8px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9rem; }
 
@@ -81,14 +84,16 @@
         .modal {
             display: none; position: fixed; z-index: 3000;
             left: 0; top: 0; width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.7);
+            background-color: rgba(0,0,0,0.85);
         }
         .modal-content {
-            background-color: white; margin: 10% auto;
-            padding: 20px; border-radius: 8px; width: 85%; max-width: 500px;
+            background-color: white; margin: 5% auto;
+            padding: 25px; border-radius: 8px; width: 90%; max-width: 600px;
             position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             animation: modalFade 0.3s;
         }
+        .pfd-content { max-width: 900px; text-align: center; background: none; box-shadow: none; }
+        
         @keyframes modalFade { from {opacity: 0; transform: translateY(-20px);} to {opacity: 1; transform: translateY(0);} }
         .close-btn {
             position: absolute; right: 15px; top: 10px;
@@ -128,7 +133,7 @@
 
     <section id="about">
         <h2>About Me</h2>
-        <p>I am a motivated engineering student focusing on <strong>Thermodynamics</strong>, <strong>Process Control</strong>, and <strong>Industrial Design</strong>. I enjoy applying mathematical concepts to solve real-world engineering problems.</p>
+        <p>I am a motivated engineering student with a strong focus on <strong>Thermodynamics</strong>, <strong>Process Control</strong>, and <strong>Industrial Design</strong>. I enjoy applying mathematical concepts to solve real-world engineering problems.</p>
     </section>
 
     <section id="education">
@@ -145,7 +150,7 @@
                 <tbody>
                     <tr>
                         <td style="padding: 12px; border-bottom: 1px solid #ddd;"><strong>Semester 1</strong></td>
-                        <td style="padding: 12px; border-bottom: 1px solid #ddd;">Fluid Mechanics, Programming, Properties of Materials</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #ddd;">Fluid Mechanics, Programming Fundamentals, Properties of Materials</td>
                         <td style="padding: 12px; border-bottom: 1px solid #ddd;">
                             <strong>SGPA: 3.49</strong> 
                             <button onclick="showTranscript('sem1')" style="margin-left:10px; cursor:pointer; font-size:0.75rem; padding:4px 10px; background:#e0f2f1; border:1px solid var(--accent-color); border-radius:4px; font-weight:bold;">Details</button>
@@ -153,7 +158,7 @@
                     </tr>
                     <tr style="background-color: #f9f9f9;">
                         <td style="padding: 12px; border-bottom: 1px solid #ddd;"><strong>Semester 2</strong></td>
-                        <td style="padding: 12px; border-bottom: 1px solid #ddd;">Fluid Dynamics, Thermodynamics, Bioprocess Principles</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #ddd;">Fluid Dynamics, Engineering Thermodynamics, Bioprocess Engineering Principles</td>
                         <td style="padding: 12px; border-bottom: 1px solid #ddd;">
                             <strong>SGPA: 3.73</strong> 
                             <button onclick="showTranscript('sem2')" style="margin-left:10px; cursor:pointer; font-size:0.75rem; padding:4px 10px; background:#e0f2f1; border:1px solid var(--accent-color); border-radius:4px; font-weight:bold;">Details</button>
@@ -169,46 +174,48 @@
                 </tbody>
             </table>
         </div>
-        <div style="margin-top: 30px; padding: 20px; background: #e0f2f1; border: 2px dashed var(--primary-color); border-radius: 8px; text-align: center;">
-            <h3 style="color: var(--primary-color); margin: 0;">Final Degree Script & Thesis</h3>
-            <p style="font-size: 0.9rem;">Section reserved for Graduation 2027 transcript.</p>
-        </div>
     </section>
-
-    <div id="transcriptModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <div id="modalBody" class="modal-body">
-                </div>
-        </div>
-    </div>
 
     <section id="projects">
         <h2>Key Projects</h2>
         <div class="projects-grid">
+            
             <div class="project-card">
                 <div class="card-content">
                     <h3>Heat Exchanger Design (CH2015)</h3>
-                    <p>Designed a Shell and Tube Heat Exchanger. Thermal analysis using LMTD/NTU methods.</p>
+                    <p>Designed a Shell and Tube Heat Exchanger for a specific process requirement. Performed detailed thermal analysis using LMTD and ε-NTU methods, and calculated pressure drops and heat transfer coefficients.</p>
+                    <p class="tech-stack">Focus: Heat & Mass Transfer, Thermal Design, Fluid Dynamics</p>
                 </div>
             </div>
+       
             <div class="project-card">
                 <div class="card-content">
-                    <h3>Soap Production Design (CH2170)</h3>
-                    <p>Developed PFD for large-scale soap manufacturing. Mass balances & equipment selection.</p>
+                    <h3>Industrial Soap Production Design (CH2170)</h3>
+                    <p>Developed a comprehensive PFD for a large-scale soap manufacturing plant. Managed stream compositions, mass balances, and equipment selection including Saponification reactors and finishing lines.</p>
+                    <p class="tech-stack">Tools: PFD Standards, Mass Balance, Laboratory Practices</p>
+                    <button onclick="showPFD()" class="btn" style="padding: 5px 15px; font-size: 0.8rem;">View Process Flow Diagram</button>
                 </div>
             </div>
+
+            <div class="project-card">
+                <div class="card-content">
+                    <h3>Beer Brewing Process Optimization</h3>
+                    <p>Studied the fermentation kinetics and temperature control systems required for efficient large-scale brewing. Analyzed microbiology and process stability.</p>
+                    <p class="tech-stack">Tools: Process Flow Diagrams (PFD), Microbiology</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <section id="skills">
         <h2>Skills & Software</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-            <div style="background: white; padding: 20px; border-radius: 8px;">
-                <h4 style="color: var(--primary-color); margin-top: 0;">Software</h4>
-                <p>Aspen Plus, SolidWorks, Python, MS Excel</p>
+            <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <h4 style="color: var(--primary-color); margin-top: 0;">Engineering Software</h4>
+                <p>Aspen Plus, SolidWorks, SolidEdge, Python, MS Word/Excel</p>
             </div>
-            <div style="background: white; padding: 20px; border-radius: 8px;">
+            <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
                 <h4 style="color: var(--primary-color); margin-top: 0;">Certifications</h4>
                 <p style="font-style: italic; color: #666;">Verification in Progress</p>
             </div>
@@ -223,6 +230,21 @@
         </div>
     </section>
 
+    <div id="transcriptModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('transcriptModal')">&times;</span>
+            <div id="modalBody" class="modal-body"></div>
+        </div>
+    </div>
+
+    <div id="pfdModal" class="modal">
+        <div class="modal-content pfd-content">
+            <span class="close-btn" onclick="closeModal('pfdModal')" style="color: white; top: -30px;">&times;</span>
+            <img src="soap-pfd.png" alt="Industrial Soap PFD" style="max-width:100%; border: 5px solid white;">
+            <p style="color:white; margin-top:10px;">Industrial Soap Manufacturing Process - CH2170 Lab Practice</p>
+        </div>
+    </div>
+
     <footer id="contact">
         <h2>Get In Touch</h2>
         <p>Email: karunarathnamgkv.23@uom.lk</p>
@@ -234,30 +256,33 @@
         const transcripts = {
             sem1: "<h4>Semester 1 Details</h4><ul class='grade-list'><li>CE1023: Fluid Mechanics<span>B+</span></li><li>CS1033: Programming Fundamentals<span>B+</span></li><li>EE1040: Electrical Fundamentals<span>A</span></li><li>MA1014: Mathematics<span>B</span></li><li>ME1033: Mechanics<span>A-</span></li><li>MT1023: Properties of Materials<span>A</span></li></ul><p style='margin-top:15px; font-weight:bold;'>SGPA: 3.49</p>",
             sem2: "<h4>Semester 2 Details</h4><ul class='grade-list'><li>ME1803: Manufacturing Processes<span>B+</span></li><li>CH1044: Fluid Dynamics<span>A</span></li><li>CH1051: Engineering Thermodynamics<span>A-</span></li><li>CH1061: Bioprocess Principles<span>A</span></li><li>CH1071: Green Chemistry<span>B+</span></li><li>EL1030: Language Skills<span>A+</span></li><li>HM2110: Effective Communication<span>B+</span></li><li>MA1024: Methods of Mathematics<span>A</span></li></ul><p style='margin-top:15px; font-weight:bold;'>SGPA: 3.73</p>",
-            sem3: "<h4>Semester 3 Details</h4><p>Official results are currently pending. Provisional highlights include:</p><ul class='grade-list'><li>Heat & Mass Transfer<span>A+</span></li><li>Linear Algebra<span>A+</span></li><li>Chemical Thermodynamics<span>A+</span></li><li>Bio Process Engineering<span>A</span></li></ul>"
+            sem3: "<h4>Semester 3 Details</h4><p>Provisional highlights include:</p><ul class='grade-list'><li>Heat & Mass Transfer<span>A+</span></li><li>Linear Algebra<span>A+</span></li><li>Chemical Thermodynamics<span>A+</span></li><li>Bio Process Engineering<span>A</span></li></ul>"
         };
 
         function showTranscript(semester) {
             document.getElementById('modalBody').innerHTML = transcripts[semester];
             document.getElementById('transcriptModal').style.display = "block";
-            document.body.style.overflow = "hidden"; // Prevent background scroll
+            document.body.style.overflow = "hidden";
         }
 
-        function closeModal() {
-            document.getElementById('transcriptModal').style.display = "none";
+        function showPFD() {
+            document.getElementById('pfdModal').style.display = "block";
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
             document.body.style.overflow = "auto";
         }
 
         window.onclick = function(event) {
-            let modal = document.getElementById('transcriptModal');
-            if (event.target == modal) { closeModal(); }
+            if (event.target.className === 'modal') {
+                event.target.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
         }
     </script>
 
 </body>
 </html>
-
-
-
-
 
