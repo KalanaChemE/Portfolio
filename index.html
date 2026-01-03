@@ -77,6 +77,27 @@
         .skills-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
         .skill-tag { background: #e0f2f1; color: var(--primary-color); padding: 8px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9rem; }
 
+        /* Modal Styles */
+        .modal {
+            display: none; position: fixed; z-index: 3000;
+            left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.7);
+        }
+        .modal-content {
+            background-color: white; margin: 10% auto;
+            padding: 20px; border-radius: 8px; width: 85%; max-width: 500px;
+            position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            animation: modalFade 0.3s;
+        }
+        @keyframes modalFade { from {opacity: 0; transform: translateY(-20px);} to {opacity: 1; transform: translateY(0);} }
+        .close-btn {
+            position: absolute; right: 15px; top: 10px;
+            font-size: 28px; font-weight: bold; cursor: pointer; color: #666;
+        }
+        .modal-body h4 { color: var(--primary-color); border-bottom: 2px solid var(--accent-color); padding-bottom: 5px; margin-top: 0; }
+        .grade-list { list-style: none; padding: 0; margin: 0; }
+        .grade-list li { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee; }
+
         footer { background: #333; color: var(--white); text-align: center; padding: 40px 20px; margin-top: 50px; }
 
         @media (max-width: 768px) { .nav-container { flex-direction: column; } .nav-links { margin-top: 15px; } }
@@ -127,7 +148,7 @@
                         <td style="padding: 12px; border-bottom: 1px solid #ddd;">Fluid Mechanics, Programming, Properties of Materials</td>
                         <td style="padding: 12px; border-bottom: 1px solid #ddd;">
                             <strong>SGPA: 3.49</strong> 
-                            <button onclick="alert('Full Semester 1 Results:\nCE1023: B+\nCS1033: B+\nEE1040: A\nMA1014: B\nME1033: A-\nMT1023: A')" style="margin-left:10px; cursor:pointer; font-size:0.7rem; padding:4px 8px;">Details</button>
+                            <button onclick="showTranscript('sem1')" style="margin-left:10px; cursor:pointer; font-size:0.75rem; padding:4px 10px; background:#e0f2f1; border:1px solid var(--accent-color); border-radius:4px; font-weight:bold;">Details</button>
                         </td>
                     </tr>
                     <tr style="background-color: #f9f9f9;">
@@ -135,14 +156,14 @@
                         <td style="padding: 12px; border-bottom: 1px solid #ddd;">Fluid Dynamics, Thermodynamics, Bioprocess Principles</td>
                         <td style="padding: 12px; border-bottom: 1px solid #ddd;">
                             <strong>SGPA: 3.73</strong> 
-                            <button onclick="alert('Full Semester 2 Results:\nME1803: B+\nCH1044: A\nCH1051: A-\nCH1061: A\nCH1071: B+\nEL1030: A+\nHM2110: B+\nMA1024: A')" style="margin-left:10px; cursor:pointer; font-size:0.7rem; padding:4px 8px;">Details</button>
+                            <button onclick="showTranscript('sem2')" style="margin-left:10px; cursor:pointer; font-size:0.75rem; padding:4px 10px; background:#e0f2f1; border:1px solid var(--accent-color); border-radius:4px; font-weight:bold;">Details</button>
                         </td>
                     </tr>
                     <tr>
                         <td style="padding: 12px; border-bottom: 1px solid #ddd;"><strong>Semester 3</strong></td>
                         <td style="padding: 12px; border-bottom: 1px solid #ddd; color: #2e7d32; font-weight: bold;">HMT (A+), Linear Algebra (A+), Thermodynamics (A+)</td>
                         <td style="padding: 12px; border-bottom: 1px solid #ddd;">
-                            <button onclick="alert('Full Semester 3 results will be updated here once officially released.')" class="btn" style="padding: 5px 10px; margin: 0; font-size: 0.7rem;">Check Full Results</button>
+                            <button onclick="showTranscript('sem3')" class="btn" style="padding: 5px 12px; margin: 0; font-size: 0.75rem; font-weight: bold;">Check Results</button>
                         </td>
                     </tr>
                 </tbody>
@@ -153,6 +174,14 @@
             <p style="font-size: 0.9rem;">Section reserved for Graduation 2027 transcript.</p>
         </div>
     </section>
+
+    <div id="transcriptModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modalBody" class="modal-body">
+                </div>
+        </div>
+    </div>
 
     <section id="projects">
         <h2>Key Projects</h2>
@@ -189,6 +218,8 @@
             <span class="skill-tag">Heat Transfer</span>
             <span class="skill-tag">Process Control</span>
             <span class="skill-tag">Linear Algebra</span>
+            <span class="skill-tag">Mass Balance</span>
+            <span class="skill-tag">Digital Logic</span>
         </div>
     </section>
 
@@ -198,6 +229,30 @@
         <p>LinkedIn: www.linkedin.com/in/kalana230323a</p>
         <p>&copy; 2025 Kalana Karunarathna.</p>
     </footer>
+
+    <script>
+        const transcripts = {
+            sem1: "<h4>Semester 1 Details</h4><ul class='grade-list'><li>CE1023: Fluid Mechanics<span>B+</span></li><li>CS1033: Programming Fundamentals<span>B+</span></li><li>EE1040: Electrical Fundamentals<span>A</span></li><li>MA1014: Mathematics<span>B</span></li><li>ME1033: Mechanics<span>A-</span></li><li>MT1023: Properties of Materials<span>A</span></li></ul><p style='margin-top:15px; font-weight:bold;'>SGPA: 3.49</p>",
+            sem2: "<h4>Semester 2 Details</h4><ul class='grade-list'><li>ME1803: Manufacturing Processes<span>B+</span></li><li>CH1044: Fluid Dynamics<span>A</span></li><li>CH1051: Engineering Thermodynamics<span>A-</span></li><li>CH1061: Bioprocess Principles<span>A</span></li><li>CH1071: Green Chemistry<span>B+</span></li><li>EL1030: Language Skills<span>A+</span></li><li>HM2110: Effective Communication<span>B+</span></li><li>MA1024: Methods of Mathematics<span>A</span></li></ul><p style='margin-top:15px; font-weight:bold;'>SGPA: 3.73</p>",
+            sem3: "<h4>Semester 3 Details</h4><p>Official results are currently pending. Provisional highlights include:</p><ul class='grade-list'><li>Heat & Mass Transfer<span>A+</span></li><li>Linear Algebra<span>A+</span></li><li>Chemical Thermodynamics<span>A+</span></li><li>Bio Process Engineering<span>A</span></li></ul>"
+        };
+
+        function showTranscript(semester) {
+            document.getElementById('modalBody').innerHTML = transcripts[semester];
+            document.getElementById('transcriptModal').style.display = "block";
+            document.body.style.overflow = "hidden"; // Prevent background scroll
+        }
+
+        function closeModal() {
+            document.getElementById('transcriptModal').style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+
+        window.onclick = function(event) {
+            let modal = document.getElementById('transcriptModal');
+            if (event.target == modal) { closeModal(); }
+        }
+    </script>
 
 </body>
 </html>
