@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Kalana Karunarathna | Engineering Portfolio</title>
     <style>
-        /* --- CSS STYLES (The Look) --- */
         :root {
-            --primary-color: #004d40; /* Deep Teal - Professional & Engineering feel */
+            --primary-color: #004d40;
             --accent-color: #00796b;
             --text-color: #333;
             --bg-color: #f4f4f4;
@@ -16,13 +15,12 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
             color: var(--text-color);
             line-height: 1.6;
+            background-color: var(--bg-color);
         }
 
-        /* Navigation */
         nav {
             background-color: var(--primary-color);
             color: var(--white);
@@ -42,32 +40,17 @@
         }
 
         .logo { font-size: 1.5rem; font-weight: bold; }
-        
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: 500;
-        }
-
+        .nav-links a { color: var(--white); text-decoration: none; margin-left: 20px; font-weight: 500; }
         .nav-links a:hover { color: #b2dfdb; }
 
-        /* Hero Section */
         header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); /* Lab/Industrial background */
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--white);
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover; background-position: center;
+            height: 60vh;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; color: var(--white);
         }
 
-        .hero-content h1 { font-size: 3rem; margin-bottom: 0.5rem; }
-        .hero-content p { font-size: 1.5rem; margin-top: 0; }
-        
         .btn {
             display: inline-block;
             background: var(--accent-color);
@@ -77,88 +60,26 @@
             border-radius: 5px;
             margin-top: 20px;
             transition: background 0.3s;
+            cursor: pointer;
+            border: none;
         }
         .btn:hover { background: #004d40; }
 
-        /* Sections General */
-        section {
-            padding: 60px 0;
-            width: 90%;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            color: var(--primary-color);
-            font-size: 2.2rem;
-        }
-
-        /* About Section */
-        .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .about-text { flex: 1; }
-        .about-text ul { list-style: none; padding: 0; }
-        .about-text li::before { content: "✔"; color: var(--accent-color); margin-right: 10px; }
+        section { padding: 60px 0; width: 90%; max-width: 1100px; margin: auto; }
+        h2 { text-align: center; margin-bottom: 40px; color: var(--primary-color); font-size: 2.2rem; }
 
         /* Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .project-card {
-            background: var(--white);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-
-        .project-card:hover { transform: translateY(-5px); }
-
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .project-card { background: var(--white); border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden; }
         .card-content { padding: 20px; }
-        .card-content h3 { color: var(--primary-color); margin-top: 0; }
-        .tech-stack { font-size: 0.9rem; color: #666; font-style: italic; }
 
         /* Skills */
-        .skills-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
+        .skills-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+        .skill-tag { background: #e0f2f1; color: var(--primary-color); padding: 8px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9rem; }
 
-        .skill-tag {
-            background: #e0f2f1;
-            color: var(--primary-color);
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-weight: bold;
-        }
+        footer { background: #333; color: var(--white); text-align: center; padding: 40px 20px; margin-top: 50px; }
 
-        /* Contact & Footer */
-        footer {
-            background: #333;
-            color: var(--white);
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
-        }
-
-        /* Mobile Adjustments */
-        @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2rem; }
-            .nav-container { flex-direction: column; }
-            .nav-links { margin-top: 15px; }
-        }
+        @media (max-width: 768px) { .nav-container { flex-direction: column; } .nav-links { margin-top: 15px; } }
     </style>
 </head>
 <body>
@@ -168,6 +89,7 @@
             <div class="logo">Eng. Portfolio</div>
             <div class="nav-links">
                 <a href="#about">About</a>
+                <a href="#education">Academic</a>
                 <a href="#projects">Projects</a>
                 <a href="#skills">Skills</a>
                 <a href="#contact">Contact</a>
@@ -185,134 +107,88 @@
 
     <section id="about">
         <h2>About Me</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>
-                    I am a motivated engineering student with a strong focus on <strong>Thermodynamics</strong>, <strong>Process Control</strong>, and <strong>Industrial Design</strong>. I enjoy applying mathematical concepts like Linear Algebra to solve real-world engineering problems.
-                </p>
-                <p>My academic journey involves:</p>
-                <ul>
-                    <li>Process Optimization & Safety</li>
-                    <li>Reaction Engineering</li>
-                    <li>Mathematical Modeling with Laplace Transforms</li>
-                </ul>
-            </div>
-        </div>
+        <p>I am a motivated engineering student focusing on <strong>Thermodynamics</strong>, <strong>Process Control</strong>, and <strong>Industrial Design</strong>. I enjoy applying mathematical concepts to solve real-world engineering problems.</p>
     </section>
-<section id="education">
+
+    <section id="education">
         <h2>Academic Performance</h2>
-        
         <div style="overflow-x: auto; background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-top: 5px solid var(--primary-color);">
             <table style="width: 100%; border-collapse: collapse; text-align: left;">
                 <thead>
                     <tr style="background-color: var(--primary-color); color: white;">
-                        <th style="padding: 12px; border-radius: 5px 0 0 0;">Semester</th>
-                        <th style="padding: 12px;">Key Modules & Results</th>
-                        <th style="padding: 12px; border-radius: 0 5px 0 0;">Academic Standing</th>
+                        <th style="padding: 12px;">Semester</th>
+                        <th style="padding: 12px;">Key Highlights</th>
+                        <th style="padding: 12px;">Results</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td style="padding: 12px; border-bottom: 1px solid #ddd;"><strong>Semester 1</strong></td>
-                        <td style="padding: 12px; border-bottom: 1px solid #ddd;">Fluid Mechanics (B+), Programming (B+), Electrical (A), Properties of Materials (A)</td>
-                        <td style="padding: 12px; border-bottom: 1px solid #ddd;">SGPA: <strong>3.49</strong></td>
+                        <td style="padding: 12px; border-bottom: 1px solid #ddd;">Fluid Mechanics, Programming, Properties of Materials</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #ddd;">
+                            <strong>SGPA: 3.49</strong> 
+                            <button onclick="alert('Full Semester 1 Results:\nCE1023: B+\nCS1033: B+\nEE1040: A\nMA1014: B\nME1033: A-\nMT1023: A')" style="margin-left:10px; cursor:pointer; font-size:0.7rem; padding:4px 8px;">Details</button>
+                        </td>
                     </tr>
-                    <tr style="background-color: #f2f2f2;">
+                    <tr style="background-color: #f9f9f9;">
                         <td style="padding: 12px; border-bottom: 1px solid #ddd;"><strong>Semester 2</strong></td>
-                        <td style="padding: 12px; border-bottom: 1px solid #ddd;">Fluid Dynamics (A), Engineering Thermodynamics (A-), Bioprocess Principles (A), Green Chemistry (B+)</td>
-                        <td style="padding: 12px; border-bottom: 1px solid #ddd;">SGPA: <strong>3.73</strong></td>
+                        <td style="padding: 12px; border-bottom: 1px solid #ddd;">Fluid Dynamics, Thermodynamics, Bioprocess Principles</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #ddd;">
+                            <strong>SGPA: 3.73</strong> 
+                            <button onclick="alert('Full Semester 2 Results:\nME1803: B+\nCH1044: A\nCH1051: A-\nCH1061: A\nCH1071: B+\nEL1030: A+\nHM2110: B+\nMA1024: A')" style="margin-left:10px; cursor:pointer; font-size:0.7rem; padding:4px 8px;">Details</button>
+                        </td>
                     </tr>
                     <tr>
                         <td style="padding: 12px; border-bottom: 1px solid #ddd;"><strong>Semester 3</strong></td>
+                        <td style="padding: 12px; border-bottom: 1px solid #ddd; color: #2e7d32; font-weight: bold;">HMT (A+), Linear Algebra (A+), Thermodynamics (A+)</td>
                         <td style="padding: 12px; border-bottom: 1px solid #ddd;">
-                            <span style="color: #2e7d32; font-weight: bold;">Heat & Mass Transfer (A+)</span>, 
-                            <span style="color: #2e7d32; font-weight: bold;">Linear Algebra (A+)</span>, 
-                            Chemical Thermodynamics (A+), Bio Process (A)
+                            <button onclick="alert('Full Semester 3 results will be updated here once officially released.')" class="btn" style="padding: 5px 10px; margin: 0; font-size: 0.7rem;">Check Full Results</button>
                         </td>
-                        <td style="padding: 12px; border-bottom: 1px solid #ddd; font-style: italic; color: #666;">Results in Progress</td>
                     </tr>
                 </tbody>
             </table>
         </div>
-
-        <div style="margin-top: 30px; padding: 25px; background: #e0f2f1; border: 2px dashed var(--primary-color); border-radius: 8px; text-align: center;">
-            <h3 style="color: var(--primary-color); margin-top: 0;">Final Degree Script & Thesis</h3>
-            <p style="color: #444;">This section will be updated upon completion of the B.Sc. (Hons) in Chemical & Process Engineering. It will include the full research transcript and Final Year Project (FYP) dissertation.</p>
-            <span style="display: inline-block; padding: 5px 15px; background: var(--primary-color); color: white; border-radius: 15px; font-size: 0.8rem;">Expected Graduation: 2027</span>
+        <div style="margin-top: 30px; padding: 20px; background: #e0f2f1; border: 2px dashed var(--primary-color); border-radius: 8px; text-align: center;">
+            <h3 style="color: var(--primary-color); margin: 0;">Final Degree Script & Thesis</h3>
+            <p style="font-size: 0.9rem;">Section reserved for Graduation 2027 transcript.</p>
         </div>
     </section>
+
     <section id="projects">
         <h2>Key Projects</h2>
         <div class="projects-grid">
-            
-            <div class="project-card">
-            <div class="card-content">
-                <h3>Heat Exchanger Design (CH2015)</h3>
-                <p>Designed a Shell and Tube Heat Exchanger for a specific process requirement. Performed detailed thermal analysis using LMTD and ε-NTU methods, and calculated pressure drops and heat transfer coefficients.</p>
-                <p class="tech-stack">Focus: Heat & Mass Transfer, Thermal Design, Fluid Dynamics</p>
-            </div>
-        </div>
-   
-           <div class="project-card">
-    <div class="card-content">
-        <h3>Industrial Soap Production Design (CH2170)</h3>
-        <p>Developed a comprehensive PFD for a large-scale soap manufacturing plant. Managed stream compositions, mass balances, and equipment selection (Saponification reactors, dryers, and finishing lines).</p>
-        <p class="tech-stack">Tools: PFD Standards, Mass Balance, Laboratory Practices</p>
-        
-        <button onclick="document.getElementById('pfd-modal').style.display='block'" class="btn" style="padding: 5px 15px; font-size: 0.8rem;">View Process Flow Diagram</button>
-    </div>
-</div>
-
-<div id="pfd-modal" style="display:none; position:fixed; z-index:2000; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.9); text-align:center; padding-top:50px;">
-    <span onclick="document.getElementById('pfd-modal').style.display='none'" style="position:absolute; right:35px; top:15px; color:white; font-size:40px; font-weight:bold; cursor:pointer;">&times;</span>
-    <img src="soap-pfd.png" style="max-width:90%; max-height:80%; border: 5px solid white;">
-    <p style="color:white; margin-top:15px;">Industrial Soap Manufacturing Process - CH2170 Lab Practice</p>
-</div>
-
             <div class="project-card">
                 <div class="card-content">
-                    <h3>Beer Brewing Process Optimization</h3>
-                    <p>Studied the fermentation kinetics and temperature control systems required for efficient large-scale brewing.</p>
-                    <p class="tech-stack">Tools: Process Flow Diagrams (PFD), Microbiology</p>
+                    <h3>Heat Exchanger Design (CH2015)</h3>
+                    <p>Designed a Shell and Tube Heat Exchanger. Thermal analysis using LMTD/NTU methods.</p>
                 </div>
             </div>
-
+            <div class="project-card">
+                <div class="card-content">
+                    <h3>Soap Production Design (CH2170)</h3>
+                    <p>Developed PFD for large-scale soap manufacturing. Mass balances & equipment selection.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="skills">
-        <h2>Technical & Software Skills</h2>
-        <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-            
-            <div class="skill-category" style="background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--accent-color); padding-bottom: 5px;">Engineering Software</h3>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 10px;"><strong>Aspen Plus:</strong> Process Simulation & Modeling</li>
-                    <li style="margin-bottom: 10px;"><strong>SolidEdge / SolidWorks:</strong> 3D Computer-Aided Design (CAD)</li>
-                    <li style="margin-bottom: 10px;"><strong>Python:</strong> Data Analysis & Numerical Methods</li>
-                    <li style="margin-bottom: 10px;"><strong>MS Excel:</strong> Advanced Engineering Calculations</li>
-                </ul>
+        <h2>Skills & Software</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+            <div style="background: white; padding: 20px; border-radius: 8px;">
+                <h4 style="color: var(--primary-color); margin-top: 0;">Software</h4>
+                <p>Aspen Plus, SolidWorks, Python, MS Excel</p>
             </div>
-
-            <div class="skill-category" style="background: #e0f2f1; padding: 20px; border-radius: 8px; border: 1px dashed var(--primary-color);">
-                <h3 style="color: var(--primary-color);">Certifications</h3>
-                <p style="font-size: 0.9rem; color: #555;">Currently pursuing formal certification for the above softwares.</p>
-                <div style="display: flex; align-items: center; gap: 10px; margin-top: 15px;">
-                    <div style="width: 10px; height: 10px; background: orange; border-radius: 50%;"></div>
-                    <span style="font-style: italic; font-size: 0.85rem;">Verification in progress / Portfolio projects available</span>
-                </div>
+            <div style="background: white; padding: 20px; border-radius: 8px;">
+                <h4 style="color: var(--primary-color); margin-top: 0;">Certifications</h4>
+                <p style="font-style: italic; color: #666;">Verification in Progress</p>
             </div>
-
         </div>
-
-        <h3 style="text-align: center; margin-top: 40px; color: var(--primary-color);">Core Engineering Competencies</h3>
         <div class="skills-container">
             <span class="skill-tag">Thermodynamics</span>
             <span class="skill-tag">Heat Transfer</span>
             <span class="skill-tag">Process Control</span>
             <span class="skill-tag">Linear Algebra</span>
-            <span class="skill-tag">Mass Balance</span>
-            <span class="skill-tag">Digital Logic</span>
         </div>
     </section>
 
@@ -320,12 +196,10 @@
         <h2>Get In Touch</h2>
         <p>Email: karunarathnamgkv.23@uom.lk</p>
         <p>LinkedIn: www.linkedin.com/in/kalana230323a</p>
-        <br>
-        <p>&copy; 2025 Kalana Karunarathna. Built for Chemical Engineering.</p>
+        <p>&copy; 2025 Kalana Karunarathna.</p>
     </footer>
 
 </body>
-
 </html>
 
 
