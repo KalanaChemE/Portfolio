@@ -6,11 +6,20 @@
     <title>Kalana Karunarathna | Engineering Portfolio</title>
     <style>
         :root {
-            --primary-color: #004d40;
-            --accent-color: #00796b;
-            --text-color: #333;
-            --bg-color: #f4f4f4;
+            --primary-color: #0f3d3e;
+            --secondary-color: #145c5c;
+            --accent-color: #1aa39d;
+            --text-color: #2f2f2f;
+            --muted-text: #666;
+            --bg-color: #f5f7fa;
             --white: #ffffff;
+            --card-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            --soft-border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -18,22 +27,24 @@
             margin: 0;
             padding: 0;
             color: var(--text-color);
-            line-height: 1.6;
-            background-color: var(--bg-color);
+            line-height: 1.7;
+            background: var(--bg-color);
         }
 
         nav {
-            background-color: var(--primary-color);
+            background: rgba(15, 61, 62, 0.95);
+            backdrop-filter: blur(8px);
             color: var(--white);
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.08);
         }
-        
+
         .nav-container {
             width: 90%;
-            max-width: 1100px;
+            max-width: 1150px;
             margin: auto;
             display: flex;
             justify-content: space-between;
@@ -41,114 +52,310 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.45rem;
+            font-weight: 700;
+            letter-spacing: 0.4px;
         }
 
         .nav-links a {
             color: var(--white);
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 22px;
             font-weight: 500;
+            transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: #b2dfdb;
+            color: #a7f3ef;
         }
 
         header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                        url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 60vh;
+            min-height: 88vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: var(--white);
+            padding: 40px 20px;
+            background:
+                linear-gradient(rgba(10, 33, 34, 0.74), rgba(10, 33, 34, 0.72)),
+                url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 12px;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            max-width: 760px;
+            margin: 0 auto;
+            color: #e8f5f4;
+        }
+
+        .hero-buttons {
+            margin-top: 28px;
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .btn {
             display: inline-block;
             background: var(--accent-color);
             color: var(--white);
-            padding: 10px 25px;
+            padding: 12px 24px;
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            transition: background 0.3s;
+            border-radius: 8px;
+            transition: all 0.3s ease;
             cursor: pointer;
             border: none;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(26, 163, 157, 0.25);
         }
 
         .btn:hover {
-            background: #004d40;
+            transform: translateY(-2px);
+            background: #168a85;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.5);
+            box-shadow: none;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.12);
         }
 
         section {
-            padding: 60px 0;
             width: 90%;
-            max-width: 1100px;
+            max-width: 1150px;
             margin: auto;
+            padding: 80px 0;
         }
 
         h2 {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 16px;
             color: var(--primary-color);
             font-size: 2.2rem;
         }
 
+        .section-intro {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 42px auto;
+            color: var(--muted-text);
+        }
+
+        .about-card,
+        .education-card,
+        .project-card,
+        .skill-card,
+        .certification-card,
+        .contact-card {
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            border: var(--soft-border);
+        }
+
+        .about-card {
+            padding: 34px;
+        }
+
+        .about-card p {
+            margin: 0;
+            font-size: 1.05rem;
+        }
+
+        .highlight {
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        .education-card {
+            overflow-x: auto;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            min-width: 760px;
+        }
+
+        thead tr {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        th, td {
+            padding: 14px;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        .detail-btn {
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            padding: 6px 10px;
+            background: #e0f7f5;
+            border: 1px solid var(--accent-color);
+            border-radius: 5px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 24px;
         }
 
         .project-card {
-            background: var(--white);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             overflow: hidden;
-            transition: transform 0.3s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
         }
 
         .card-content {
-            padding: 20px;
+            padding: 26px;
         }
 
         .card-content h3 {
             color: var(--primary-color);
             margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1.28rem;
         }
 
         .tech-stack {
-            font-size: 0.9rem;
-            color: #666;
+            font-size: 0.93rem;
+            color: var(--muted-text);
             font-style: italic;
+            margin-top: 14px;
+        }
+
+        .small-btn {
+            padding: 8px 14px;
+            font-size: 0.8rem;
             margin-top: 10px;
+            margin-right: 8px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 28px;
+        }
+
+        .skill-card,
+        .certification-card,
+        .contact-card {
+            padding: 24px;
+        }
+
+        .skill-card h4,
+        .certification-card h4,
+        .contact-card h4 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .certification-card {
+            border-left: 6px solid var(--accent-color);
+        }
+
+        .certification-subtitle {
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 12px;
+            font-size: 1.02rem;
+        }
+
+        .certificate-link {
+            display: inline-block;
+            margin-top: 14px;
+            color: white;
+            background: var(--accent-color);
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.92rem;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .certificate-link:hover {
+            background: #168a85;
+            transform: translateY(-2px);
         }
 
         .skills-container {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
+            gap: 12px;
+            margin-top: 8px;
         }
 
         .skill-tag {
-            background: #e0f2f1;
+            background: #dff6f4;
             color: var(--primary-color);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.9rem;
+            padding: 10px 16px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 0.92rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .contact-card p {
+            margin: 10px 0;
+        }
+
+        .contact-card a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #1b1f24;
+            color: #e8e8e8;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 30px;
         }
 
         .modal {
@@ -166,12 +373,12 @@
             background-color: white;
             margin: 5% auto;
             padding: 25px;
-            border-radius: 8px;
+            border-radius: 14px;
             width: 90%;
-            max-width: 600px;
+            max-width: 650px;
             position: relative;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            animation: modalFade 0.3s;
+            box-shadow: 0 14px 35px rgba(0,0,0,0.25);
+            animation: modalFade 0.25s ease;
         }
 
         .pfd-content {
@@ -180,15 +387,15 @@
             background: none;
             box-shadow: none;
         }
-        
+
         @keyframes modalFade {
-            from { opacity: 0; transform: translateY(-20px); }
+            from { opacity: 0; transform: translateY(-18px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .close-btn {
             position: absolute;
-            right: 15px;
+            right: 16px;
             top: 10px;
             font-size: 28px;
             font-weight: bold;
@@ -199,7 +406,7 @@
         .modal-body h4 {
             color: var(--primary-color);
             border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 5px;
+            padding-bottom: 6px;
             margin-top: 0;
         }
 
@@ -212,57 +419,44 @@
         .grade-list li {
             display: flex;
             justify-content: space-between;
-            padding: 8px 0;
+            gap: 20px;
+            padding: 10px 0;
             border-bottom: 1px solid #eee;
-        }
-
-        .certification-card {
-            border-left: 5px solid var(--accent-color);
-        }
-
-        .certification-card h4 {
-            color: var(--primary-color);
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-
-        .certification-subtitle {
-            font-weight: 600;
-            color: #00796b;
-            margin-bottom: 10px;
-        }
-
-        .certificate-link {
-            display: inline-block;
-            margin-top: 12px;
-            color: var(--white);
-            background: var(--accent-color);
-            padding: 8px 16px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: background 0.3s;
-        }
-
-        .certificate-link:hover {
-            background: #004d40;
-        }
-
-        footer {
-            background: #333;
-            color: var(--white);
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 50px;
         }
 
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
+                gap: 12px;
             }
 
             .nav-links {
-                margin-top: 15px;
+                text-align: center;
+            }
+
+            .nav-links a {
+                margin: 0 10px;
+                display: inline-block;
+                margin-bottom: 8px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .about-card,
+            .skill-card,
+            .certification-card,
+            .contact-card {
+                padding: 20px;
             }
         }
     </style>
@@ -285,57 +479,73 @@
     <header>
         <div class="hero-content">
             <h1>Hi, I'm Kalana Karunarathna</h1>
-            <p>Chemical & Process Engineering Undergraduate @ University of Moratuwa</p>
-            <a href="#projects" class="btn">View My Work</a>
+            <p>
+                Chemical and Process Engineering Undergraduate at the University of Moratuwa
+                with interests in process design, thermodynamics, simulation, and industrial problem solving.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            </div>
         </div>
     </header>
 
     <section id="about">
         <h2>About Me</h2>
-        <p>
-            I am a Chemical and Process Engineering undergraduate at the University of Moratuwa
-            with strong academic performance and a growing interest in <strong>process design</strong>,
-            <strong>thermodynamics</strong>, <strong>simulation</strong>, and
-            <strong>industrial problem solving</strong>. I enjoy applying engineering fundamentals
-            and software tools such as <strong>Aspen Plus</strong>, <strong>Python</strong>, and
-            <strong>Excel</strong> to analyze and design real engineering processes.
+        <p class="section-intro">
+            A motivated engineering undergraduate building strong foundations in chemical and process engineering through academics, projects, and technical tools.
         </p>
+        <div class="about-card">
+            <p>
+                I am a <span class="highlight">Chemical and Process Engineering undergraduate</span> at the
+                University of Moratuwa with strong academic performance and a growing interest in
+                <span class="highlight">process design</span>, <span class="highlight">thermodynamics</span>,
+                <span class="highlight">simulation</span>, and
+                <span class="highlight">industrial problem solving</span>.
+                I enjoy applying engineering fundamentals and software tools such as
+                <span class="highlight">Aspen Plus</span>, <span class="highlight">Python</span>, and
+                <span class="highlight">Excel</span> to analyze, model, and improve engineering processes.
+            </p>
+        </div>
     </section>
 
     <section id="education">
         <h2>Academic Performance</h2>
-        <div style="overflow-x: auto; background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-top: 5px solid var(--primary-color);">
-            <table style="width: 100%; border-collapse: collapse; text-align: left;">
+        <p class="section-intro">
+            My academic journey reflects steady improvement and strong interest in core chemical engineering subjects.
+        </p>
+        <div class="education-card">
+            <table>
                 <thead>
-                    <tr style="background-color: var(--primary-color); color: white;">
-                        <th style="padding: 12px;">Semester</th>
-                        <th style="padding: 12px;">Key Highlights</th>
-                        <th style="padding: 12px;">Results</th>
+                    <tr>
+                        <th>Semester</th>
+                        <th>Key Highlights</th>
+                        <th>Results</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="padding: 12px; border-bottom: 1px solid #ddd;"><strong>Semester 1</strong></td>
-                        <td style="padding: 12px; border-bottom: 1px solid #ddd;">Fluid Mechanics, Programming Fundamentals, Properties of Materials</td>
-                        <td style="padding: 12px; border-bottom: 1px solid #ddd;">
+                        <td><strong>Semester 1</strong></td>
+                        <td>Fluid Mechanics, Programming Fundamentals, Properties of Materials</td>
+                        <td>
                             <strong>SGPA: 3.49</strong>
-                            <button onclick="showTranscript('sem1')" style="margin-left:10px; cursor:pointer; font-size:0.75rem; padding:4px 10px; background:#e0f2f1; border:1px solid var(--accent-color); border-radius:4px; font-weight:bold;">Details</button>
-                        </td>
-                    </tr>
-                    <tr style="background-color: #f9f9f9;">
-                        <td style="padding: 12px; border-bottom: 1px solid #ddd;"><strong>Semester 2</strong></td>
-                        <td style="padding: 12px; border-bottom: 1px solid #ddd;">Fluid Dynamics, Engineering Thermodynamics, Bioprocess Engineering Principles</td>
-                        <td style="padding: 12px; border-bottom: 1px solid #ddd;">
-                            <strong>SGPA: 3.73</strong>
-                            <button onclick="showTranscript('sem2')" style="margin-left:10px; cursor:pointer; font-size:0.75rem; padding:4px 10px; background:#e0f2f1; border:1px solid var(--accent-color); border-radius:4px; font-weight:bold;">Details</button>
+                            <button onclick="showTranscript('sem1')" class="detail-btn">Details</button>
                         </td>
                     </tr>
                     <tr>
-                        <td style="padding: 12px; border-bottom: 1px solid #ddd;"><strong>Semester 3</strong></td>
-                        <td style="padding: 12px; border-bottom: 1px solid #ddd;">HMT, Chemical Thermodynamics, Linear Algebra, Bio Process Engineering</td>
-                        <td style="padding: 12px; border-bottom: 1px solid #ddd;">
+                        <td><strong>Semester 2</strong></td>
+                        <td>Fluid Dynamics, Engineering Thermodynamics, Bioprocess Engineering Principles</td>
+                        <td>
+                            <strong>SGPA: 3.73</strong>
+                            <button onclick="showTranscript('sem2')" class="detail-btn">Details</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Semester 3</strong></td>
+                        <td>Heat & Mass Transfer, Chemical Thermodynamics, Linear Algebra, Bio Process Engineering</td>
+                        <td>
                             <strong>SGPA: 3.93</strong>
-                            <button onclick="showTranscript('sem3')" style="margin-left:10px; cursor:pointer; font-size:0.75rem; padding:4px 10px; background:#e0f2f1; border:1px solid var(--accent-color); border-radius:4px; font-weight:bold;">Details</button>
+                            <button onclick="showTranscript('sem3')" class="detail-btn">Details</button>
                         </td>
                     </tr>
                 </tbody>
@@ -345,36 +555,37 @@
 
     <section id="projects">
         <h2>Key Projects</h2>
+        <p class="section-intro">
+            Selected academic and technical projects that reflect my understanding of engineering principles and process analysis.
+        </p>
         <div class="projects-grid">
-            
+
             <div class="project-card">
                 <div class="card-content">
                     <h3>Heat Exchanger Design (CH2015)</h3>
                     <p>
-                        Designed a shell-and-tube heat exchanger for a defined process requirement
-                        by carrying out thermal analysis and engineering calculations. Applied the
-                        <strong>LMTD</strong> and <strong>&epsilon;-NTU</strong> methods to evaluate
-                        heat duty, estimate overall heat transfer performance, and calculate pressure
-                        drops, supporting a practical and process-oriented design solution.
+                        Designed a shell-and-tube heat exchanger for a defined process requirement by carrying out thermal analysis and engineering calculations.
+                        Applied the <strong>LMTD</strong> and <strong>&epsilon;-NTU</strong> methods to evaluate heat duty,
+                        estimate overall heat transfer performance, and calculate pressure drops for a practical engineering design.
                     </p>
                     <p class="tech-stack">Focus: Heat &amp; Mass Transfer, Thermal Design, Fluid Dynamics</p>
                 </div>
             </div>
-       
+
             <div class="project-card">
                 <div class="card-content">
                     <h3>Industrial Soap Production Design (CH2170)</h3>
                     <p>
-                        Performed laboratory-scale saponification using coconut oil to evaluate soap
-                        yield <strong>(12.44%)</strong> and product quality <strong>(pH 8)</strong>.
+                        Performed laboratory-scale saponification using coconut oil to evaluate soap yield
+                        <strong>(12.44%)</strong> and product quality <strong>(pH 8)</strong>.
                         Extended the study into an industrial process design by preparing a
                         <strong>Block Flow Diagram (BFD)</strong> and a detailed
-                        <strong>Process Flow Diagram (PFD)</strong>, identifying key unit operations,
-                        material flow paths, and process design considerations for larger-scale production.
+                        <strong>Process Flow Diagram (PFD)</strong> to identify unit operations,
+                        material flow paths, and design considerations for scale-up.
                     </p>
                     <p class="tech-stack">Tools &amp; Skills: EDraw Max, Mass Balance Calculations, Process Design</p>
-                    <button onclick="showPFD()" class="btn" style="padding: 5px 10px; font-size: 0.75rem;">View PFD</button>
-                    <button onclick="showGallery()" class="btn" style="padding: 5px 10px; font-size: 0.75rem; background: #555;">Process Walkthrough</button>
+                    <button onclick="showPFD()" class="btn small-btn">View PFD</button>
+                    <button onclick="showGallery()" class="btn small-btn" style="background:#4a5568; box-shadow:none;">Process Walkthrough</button>
                 </div>
             </div>
 
@@ -382,11 +593,10 @@
                 <div class="card-content">
                     <h3>Beer Brewing Process Optimization</h3>
                     <p>
-                        Analyzed fermentation kinetics and temperature control requirements for a
-                        large-scale beer brewing process, with attention to process stability,
-                        microbial performance, and production efficiency. Reviewed the relationship
-                        between operating conditions and process behavior to better understand how
-                        bioprocess parameters influence industrial-scale performance.
+                        Analyzed fermentation kinetics and temperature control requirements for a large-scale beer brewing process,
+                        focusing on process stability, microbial performance, and production efficiency.
+                        Reviewed the relationship between operating conditions and process behavior to understand
+                        how bioprocess parameters influence industrial-scale performance.
                     </p>
                     <p class="tech-stack">Tools: Process Flow Diagrams (PFD), Microbiology</p>
                 </div>
@@ -396,14 +606,19 @@
     </section>
 
     <section id="skills">
-        <h2>Skills & Software</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-            <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                <h4 style="color: var(--primary-color); margin-top: 0;">Engineering Software</h4>
-                <p>Aspen Plus, SolidWorks, SolidEdge, Python, EDraw Max, MS Word/Excel</p>
+        <h2>Skills & Certifications</h2>
+        <p class="section-intro">
+            A combination of engineering knowledge, technical tools, and professional learning that supports my development as an engineer.
+        </p>
+
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h4>Engineering Software</h4>
+                <p>Aspen Plus, SolidWorks, SolidEdge, Python, EDraw Max, MS Word, MS Excel</p>
             </div>
-            <div class="certification-card" style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                <h4>Certifications</h4>
+
+            <div class="certification-card">
+                <h4>Certification</h4>
                 <p class="certification-subtitle">AIChE Academy – ELA953 SAChE Certificate Program</p>
                 <p><strong>Course:</strong> An Introduction to Managing Process Safety Hazards</p>
                 <p><strong>Issued by:</strong> AIChE Academy / CCPS</p>
@@ -416,13 +631,42 @@
                 <a href="aiche-certificate.pdf" target="_blank" class="certificate-link">View Certificate</a>
             </div>
         </div>
+
         <div class="skills-container">
             <span class="skill-tag">Thermodynamics</span>
             <span class="skill-tag">Heat Transfer</span>
             <span class="skill-tag">Process Control</span>
-            <span class="skill-tag">Linear Algebra</span>
             <span class="skill-tag">Mass Balance</span>
-            <span class="skill-tag">Digital Logic</span>
+            <span class="skill-tag">Fluid Mechanics</span>
+            <span class="skill-tag">Linear Algebra</span>
+            <span class="skill-tag">Process Design</span>
+            <span class="skill-tag">Engineering Calculations</span>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <p class="section-intro">
+            I am open to academic, technical, and professional networking opportunities.
+        </p>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h4>Email</h4>
+                <p><a href="mailto:karunarathnamgkv.23@uom.lk">karunarathnamgkv.23@uom.lk</a></p>
+            </div>
+
+            <div class="contact-card">
+                <h4>LinkedIn</h4>
+                <p><a href="https://www.linkedin.com/in/kalana230323a" target="_blank">www.linkedin.com/in/kalana230323a</a></p>
+            </div>
+
+            <div class="contact-card">
+                <h4>Portfolio Note</h4>
+                <p>
+                    This portfolio highlights my academic performance, engineering projects,
+                    technical skills, and professional development as an undergraduate engineer.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -436,7 +680,7 @@
     <div id="pfdModal" class="modal">
         <div class="modal-content pfd-content">
             <span class="close-btn" onclick="closeModal('pfdModal')" style="color: white; top: -30px;">&times;</span>
-            <img src="soap-pfd.png" alt="Industrial Soap PFD" style="max-width:100%; border: 5px solid white;">
+            <img src="soap-pfd.png" alt="Industrial Soap PFD" style="max-width:100%; border: 5px solid white; border-radius: 8px;">
             <p style="color:white; margin-top:10px;">Industrial Soap Manufacturing Process - CH2170 Lab Practice</p>
         </div>
     </div>
@@ -447,21 +691,18 @@
             <div class="modal-body">
                 <h4>Soap Production Process Walkthrough</h4>
                 <ul class="grade-list" style="max-height: 400px; overflow-y: auto; text-align: left;">
-                    <li><strong>1. Raw Material Measurement:</strong> Precision weighing of 15g NaOH and 15g NaCl using analytical balances.</li>
-                    <li><strong>2. Lye Preparation:</strong> Dissolving NaOH in 50ml distilled water.</li>
-                    <li><strong>3. Saponification:</strong> Heating coconut oil and lye solution to 85°C while stirring for 12 minutes.</li>
-                    <li><strong>4. Salting Out:</strong> Adding NaCl solution to separate soap curds from glycerol and unreacted alkali.</li>
-                    <li><strong>5. Testing:</strong> pH analysis confirming a safe value of 8 for consumer use.</li>
+                    <li><strong>1. Raw Material Measurement:</strong> <span>Precision weighing of 15g NaOH and 15g NaCl using analytical balances.</span></li>
+                    <li><strong>2. Lye Preparation:</strong> <span>Dissolving NaOH in 50ml distilled water.</span></li>
+                    <li><strong>3. Saponification:</strong> <span>Heating coconut oil and lye solution to 85°C while stirring for 12 minutes.</span></li>
+                    <li><strong>4. Salting Out:</strong> <span>Adding NaCl solution to separate soap curds from glycerol and unreacted alkali.</span></li>
+                    <li><strong>5. Testing:</strong> <span>pH analysis confirming a safe value of 8 for consumer use.</span></li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <footer id="contact">
-        <h2>Get In Touch</h2>
-        <p>Email: karunarathnamgkv.23@uom.lk</p>
-        <p>LinkedIn: www.linkedin.com/in/kalana230323a</p>
-        <p>&copy; 2026 Kalana Karunarathna.</p>
+    <footer>
+        <p>&copy; 2026 Kalana Karunarathna. All rights reserved.</p>
     </footer>
 
     <script>
