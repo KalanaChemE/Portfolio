@@ -216,6 +216,38 @@
             border-bottom: 1px solid #eee;
         }
 
+        .certification-card {
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .certification-card h4 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .certification-subtitle {
+            font-weight: 600;
+            color: #00796b;
+            margin-bottom: 10px;
+        }
+
+        .certificate-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: var(--white);
+            background: var(--accent-color);
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .certificate-link:hover {
+            background: #004d40;
+        }
+
         footer {
             background: #333;
             color: var(--white);
@@ -370,9 +402,18 @@
                 <h4 style="color: var(--primary-color); margin-top: 0;">Engineering Software</h4>
                 <p>Aspen Plus, SolidWorks, SolidEdge, Python, EDraw Max, MS Word/Excel</p>
             </div>
-            <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                <h4 style="color: var(--primary-color); margin-top: 0;">Certifications</h4>
-                <p style="font-style: italic; color: #666;">Verification in Progress</p>
+            <div class="certification-card" style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <h4>Certifications</h4>
+                <p class="certification-subtitle">AIChE Academy – ELA953 SAChE Certificate Program</p>
+                <p><strong>Course:</strong> An Introduction to Managing Process Safety Hazards</p>
+                <p><strong>Issued by:</strong> AIChE Academy / CCPS</p>
+                <p><strong>Date:</strong> March 15, 2026</p>
+                <p>
+                    Completed a professional certificate focused on process safety fundamentals,
+                    hazard identification, and safe engineering practices relevant to chemical
+                    and process industries.
+                </p>
+                <a href="aiche-certificate.pdf" target="_blank" class="certificate-link">View Certificate</a>
             </div>
         </div>
         <div class="skills-container">
