@@ -3,43 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalana Karunarathna | Engineering Portfolio</title>
+    <title>Kalana Karunarathna | Portfolio</title>
     <style>
         :root {
-            --primary-color: #0f3d3e;
-            --secondary-color: #145c5c;
-            --accent-color: #1aa39d;
-            --text-color: #2f2f2f;
-            --muted-text: #666;
-            --bg-color: #f5f7fa;
+            /* Updated to Petroleum/Industrial theme */
+            --primary-color: #1a2a3a;
+            --secondary-color: #2c3e50;
+            --accent-color: #d35400;
+            --text-color: #333;
+            --bg-color: #f4f7f6;
             --white: #ffffff;
-            --card-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            --soft-border: 1px solid rgba(0, 0, 0, 0.06);
         }
 
-        * {
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+        * { box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 0;
             color: var(--text-color);
             line-height: 1.7;
             background: var(--bg-color);
         }
 
         nav {
-            background: rgba(15, 61, 62, 0.95);
-            backdrop-filter: blur(8px);
+            background: var(--primary-color);
             color: var(--white);
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.08);
         }
 
         .nav-container {
@@ -51,22 +43,13 @@
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.45rem;
-            font-weight: 700;
-            letter-spacing: 0.4px;
-        }
+        .logo { font-size: 1.5rem; font-weight: 700; }
 
         .nav-links a {
             color: var(--white);
             text-decoration: none;
-            margin-left: 22px;
+            margin-left: 20px;
             font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #a7f3ef;
         }
 
         header {
@@ -77,350 +60,51 @@
             text-align: center;
             color: var(--white);
             padding: 40px 20px;
-            background:
-                linear-gradient(rgba(10, 33, 34, 0.74), rgba(10, 33, 34, 0.72)),
-                url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            /* Updated to Petroleum Industry Background */
+            background: linear-gradient(rgba(26, 42, 58, 0.8), rgba(26, 42, 58, 0.8)),
+                        url('https://images.unsplash.com/photo-1580587816470-b523604f3265?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
         }
 
-        .hero-content {
-            max-width: 850px;
-        }
-
-        .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 12px;
-        }
-
-        .hero-content p {
-            font-size: 1.15rem;
-            max-width: 760px;
-            margin: 0 auto;
-            color: #e8f5f4;
-        }
-
-        .hero-buttons {
-            margin-top: 28px;
-            display: flex;
-            gap: 14px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+        .hero-content { max-width: 850px; }
+        .hero-content h1 { font-size: 3rem; margin-bottom: 15px; }
 
         .btn {
             display: inline-block;
             background: var(--accent-color);
             color: var(--white);
-            padding: 12px 24px;
+            padding: 12px 30px;
             text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-weight: 600;
-            box-shadow: 0 8px 20px rgba(26, 163, 157, 0.25);
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            background: #168a85;
-        }
-
-        .btn-secondary {
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.5);
-            box-shadow: none;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.12);
-        }
-
-        section {
-            width: 90%;
-            max-width: 1150px;
-            margin: auto;
-            padding: 80px 0;
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 16px;
-            color: var(--primary-color);
-            font-size: 2.2rem;
-        }
-
-        .section-intro {
-            text-align: center;
-            max-width: 760px;
-            margin: 0 auto 42px auto;
-            color: var(--muted-text);
-        }
-
-        .about-card,
-        .education-card,
-        .skill-card,
-        .certification-card,
-        .contact-card {
-            background: var(--white);
-            border-radius: 16px;
-            box-shadow: var(--card-shadow);
-            border: var(--soft-border);
-        }
-
-        .about-card {
-            padding: 34px;
-        }
-
-        .about-card p {
-            margin: 0;
-            font-size: 1.05rem;
-        }
-
-        .highlight {
-            color: var(--secondary-color);
-            font-weight: 700;
-        }
-
-        .education-card {
-            overflow-x: auto;
-            padding: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            min-width: 760px;
-        }
-
-        thead tr {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        th, td {
-            padding: 14px;
-            border-bottom: 1px solid #e8e8e8;
-        }
-
-        tbody tr:nth-child(even) {
-            background: #fafafa;
-        }
-
-        .detail-btn {
-            margin-left: 10px;
-            cursor: pointer;
-            font-size: 0.75rem;
-            padding: 6px 10px;
-            background: #e0f7f5;
-            border: 1px solid var(--accent-color);
             border-radius: 5px;
+            margin-top: 20px;
             font-weight: 600;
-            color: var(--primary-color);
         }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            margin-bottom: 28px;
-        }
+        section { width: 90%; max-width: 1150px; margin: auto; padding: 80px 0; }
+        h2 { text-align: center; color: var(--primary-color); font-size: 2.2rem; margin-bottom: 40px; }
 
-        .skill-card,
-        .certification-card,
-        .contact-card {
-            padding: 24px;
-        }
-
-        .skill-card h4,
-        .certification-card h4,
-        .contact-card h4 {
-            margin-top: 0;
-            margin-bottom: 12px;
-            color: var(--primary-color);
-            font-size: 1.2rem;
-        }
-
-        .certification-card {
-            border-left: 6px solid var(--accent-color);
-        }
-
-        .certification-subtitle {
-            font-weight: 700;
-            color: var(--secondary-color);
-            margin-bottom: 12px;
-            font-size: 1.02rem;
-        }
-
-        .certificate-link {
-            display: inline-block;
-            margin-top: 14px;
-            color: white;
-            background: var(--accent-color);
-            padding: 10px 18px;
+        .about-card, .education-card, .contact-card {
+            background: var(--white);
+            padding: 30px;
             border-radius: 8px;
-            text-decoration: none;
-            font-size: 0.92rem;
-            transition: background 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        .certificate-link:hover {
-            background: #168a85;
-            transform: translateY(-2px);
-        }
-
-        .skills-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 8px;
-        }
-
-        .skill-tag {
-            background: #dff6f4;
-            color: var(--primary-color);
-            padding: 10px 16px;
-            border-radius: 999px;
-            font-weight: 600;
-            font-size: 0.92rem;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-        }
-
-        .contact-card p {
-            margin: 10px 0;
-        }
-
-        .contact-card a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            word-break: break-word;
-        }
-
-        .contact-card a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            background: #1b1f24;
-            color: #e8e8e8;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 30px;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 3000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.85);
-        }
-
-        .modal-content {
-            background-color: white;
-            margin: 5% auto;
-            padding: 25px;
-            border-radius: 14px;
-            width: 90%;
-            max-width: 650px;
-            position: relative;
-            box-shadow: 0 14px 35px rgba(0,0,0,0.25);
-            animation: modalFade 0.25s ease;
-        }
-
-        @keyframes modalFade {
-            from { opacity: 0; transform: translateY(-18px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .close-btn {
-            position: absolute;
-            right: 16px;
-            top: 10px;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            color: #666;
-        }
-
-        .modal-body h4 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 6px;
-            margin-top: 0;
-        }
-
-        .grade-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .grade-list li {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .nav-links {
-                text-align: center;
-            }
-
-            .nav-links a {
-                margin: 0 10px;
-                display: inline-block;
-                margin-bottom: 8px;
-            }
-
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-
-            section {
-                padding: 65px 0;
-            }
-
-            .about-card,
-            .skill-card,
-            .certification-card,
-            .contact-card {
-                padding: 20px;
-            }
-        }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 15px; border-bottom: 1px solid #eee; text-align: left; }
+        
+        footer { background: var(--primary-color); color: white; text-align: center; padding: 20px; }
     </style>
 </head>
 <body>
 
     <nav>
         <div class="nav-container">
-            <div class="logo">Eng. Portfolio</div>
+            <div class="logo">Portfolio</div>
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#education">Academic</a>
-                <a href="#skills">Skills</a>
                 <a href="#contact">Contact</a>
             </div>
         </div>
@@ -429,179 +113,40 @@
     <header>
         <div class="hero-content">
             <h1>Hi, I'm Kalana Karunarathna</h1>
-            <p>
-                Chemical and Process Engineering Undergraduate at the University of Moratuwa
-                with interests in process design, thermodynamics, simulation, and industrial problem solving.
-            </p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn">Contact Me</a>
-            </div>
+            <p>Chemical and Process Engineering Undergraduate at the University of Moratuwa with a focus on process design and industrial systems.</p>
+            <a href="#contact" class="btn">Contact Me</a>
         </div>
     </header>
 
     <section id="about">
         <h2>About Me</h2>
-        <p class="section-intro">
-            A motivated engineering undergraduate building strong foundations in chemical and process engineering through academics and technical tools.
-        </p>
         <div class="about-card">
-            <p>
-                I am a <span class="highlight">Chemical and Process Engineering undergraduate</span> at the
-                University of Moratuwa with strong academic performance and a growing interest in
-                <span class="highlight">process design</span>, <span class="highlight">thermodynamics</span>,
-                <span class="highlight">simulation</span>, and
-                <span class="highlight">industrial problem solving</span>.
-                I enjoy applying engineering fundamentals and software tools such as
-                <span class="highlight">Aspen Plus</span>, <span class="highlight">Python</span>, and
-                <span class="highlight">Excel</span> to analyze, model, and improve engineering processes.
-            </p>
+            <p>I am a Chemical and Process Engineering undergraduate at the University of Moratuwa. I have a strong interest in thermodynamics, process simulation, and the technical aspects of the oil and gas industry.</p>
         </div>
     </section>
 
     <section id="education">
         <h2>Academic Performance</h2>
-        <p class="section-intro">
-            My academic journey reflects steady improvement and strong interest in core chemical engineering subjects.
-        </p>
         <div class="education-card">
             <table>
-                <thead>
-                    <tr>
-                        <th>Semester</th>
-                        <th>Key Highlights</th>
-                        <th>Results</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Semester 1</strong></td>
-                        <td>Fluid Mechanics, Programming Fundamentals, Properties of Materials</td>
-                        <td>
-                            <strong>SGPA: 3.49</strong>
-                            <button onclick="showTranscript('sem1')" class="detail-btn">Details</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>Semester 2</strong></td>
-                        <td>Fluid Dynamics, Engineering Thermodynamics, Bioprocess Engineering Principles</td>
-                        <td>
-                            <strong>SGPA: 3.73</strong>
-                            <button onclick="showTranscript('sem2')" class="detail-btn">Details</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>Semester 3</strong></td>
-                        <td>Heat & Mass Transfer, Chemical Thermodynamics, Linear Algebra, Bio Process Engineering</td>
-                        <td>
-                            <strong>SGPA: 3.93</strong>
-                            <button onclick="showTranscript('sem3')" class="detail-btn">Details</button>
-                        </td>
-                    </tr>
-                </tbody>
+                <tr><th>Semester</th><th>Highlights</th></tr>
+                <tr><td>Semester 1</td><td>Fluid Mechanics, Programming Fundamentals</td></tr>
+                <tr><td>Semester 2</td><td>Engineering Thermodynamics, Bioprocess Principles</td></tr>
+                <tr><td>Semester 3</td><td>Heat & Mass Transfer, Chemical Thermodynamics</td></tr>
             </table>
-        </div>
-    </section>
-
-    <section id="skills">
-        <h2>Skills & Certifications</h2>
-        <p class="section-intro">
-            A combination of engineering knowledge, technical tools, and professional learning that supports my development as an engineer.
-        </p>
-
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h4>Engineering Software</h4>
-                <p>Aspen Plus, SolidWorks, SolidEdge, Python, EDraw Max, MS Word, MS Excel</p>
-            </div>
-
-            <div class="certification-card">
-                <h4>Certification</h4>
-                <p class="certification-subtitle">AIChE Academy – ELA953 SAChE Certificate Program</p>
-                <p><strong>Course:</strong> An Introduction to Managing Process Safety Hazards</p>
-                <p><strong>Issued by:</strong> AIChE Academy / CCPS</p>
-                <p><strong>Date:</strong> March 15, 2026</p>
-                <p>
-                    Completed a professional certificate focused on process safety fundamentals,
-                    hazard identification, and safe engineering practices relevant to chemical
-                    and process industries.
-                </p>
-                <a href="aiche-certificate.pdf" target="_blank" class="certificate-link">View Certificate</a>
-            </div>
-        </div>
-
-        <div class="skills-container">
-            <span class="skill-tag">Thermodynamics</span>
-            <span class="skill-tag">Heat Transfer</span>
-            <span class="skill-tag">Process Control</span>
-            <span class="skill-tag">Mass Balance</span>
-            <span class="skill-tag">Fluid Mechanics</span>
-            <span class="skill-tag">Linear Algebra</span>
-            <span class="skill-tag">Process Design</span>
-            <span class="skill-tag">Engineering Calculations</span>
         </div>
     </section>
 
     <section id="contact">
         <h2>Get In Touch</h2>
-        <p class="section-intro">
-            I am open to academic, technical, and professional networking opportunities.
-        </p>
-        <div class="contact-grid">
-            <div class="contact-card">
-                <h4>Email</h4>
-                <p><a href="mailto:karunarathnamgkv.23@uom.lk">karunarathnamgkv.23@uom.lk</a></p>
-            </div>
-
-            <div class="contact-card">
-                <h4>LinkedIn</h4>
-                <p><a href="https://www.linkedin.com/in/kalana230323a" target="_blank">www.linkedin.com/in/kalana230323a</a></p>
-            </div>
-
-            <div class="contact-card">
-                <h4>Portfolio Note</h4>
-                <p>
-                    This portfolio highlights my academic performance, technical skills, and professional development as an undergraduate engineer.
-                </p>
-            </div>
+        <div class="contact-card" style="text-align: center;">
+            <p>Email: <a href="mailto:karunarathnamgkv.23@uom.lk">karunarathnamgkv.23@uom.lk</a></p>
         </div>
     </section>
 
-    <div id="transcriptModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('transcriptModal')">&times;</span>
-            <div id="modalBody" class="modal-body"></div>
-        </div>
-    </div>
-
     <footer>
-        <p>&copy; 2026 Kalana Karunarathna. All rights reserved.</p>
+        <p>&copy; 2026 Kalana Karunarathna.</p>
     </footer>
-
-    <script>
-        const transcripts = {
-            sem1: "<h4>Semester 1 Details</h4><ul class='grade-list'><li>CE1023: Fluid Mechanics<span>B+</span></li><li>CS1033: Programming Fundamentals<span>B+</span></li><li>EE1040: Electrical Fundamentals<span>A</span></li><li>MA1014: Mathematics<span>B</span></li><li>ME1033: Mechanics<span>A-</span></li><li>MT1023: Properties of Materials<span>A</span></li></ul><p style='margin-top:15px; font-weight:bold;'>SGPA: 3.49</p>",
-            sem2: "<h4>Semester 2 Details</h4><ul class='grade-list'><li>ME1803: Manufacturing Processes<span>B+</span></li><li>CH1044: Fluid Dynamics<span>A</span></li><li>CH1051: Engineering Thermodynamics<span>A-</span></li><li>CH1061: Bioprocess Principles<span>A</span></li><li>CH1071: Green Chemistry<span>B+</span></li><li>EL1030: Language Skills<span>A+</span></li><li>HM2110: Effective Communication<span>B+</span></li><li>MA1024: Methods of Mathematics<span>A</span></li></ul><p style='margin-top:15px; font-weight:bold;'>SGPA: 3.73</p>",
-            sem3: "<h4>Semester 3 Details</h4><ul class='grade-list'><li>CH2015: Heat and Mass Transfer<span>A+</span></li><li>CH2160: Bio Process Engineering<span>A</span></li><li>CH2170: Laboratory Practices 1<span>A</span></li><li>CH2631: Chemical Thermodynamics<span>A+</span></li><li>EN1803: Basic Electronics<span>A</span></li><li>MA2014: Differential Equations<span>B+</span></li><li>MA2034: Linear Algebra<span>A+</span></li></ul><p style='margin-top:15px; font-weight:bold;'>SGPA: 3.93</p>"
-        };
-
-        function showTranscript(semester) {
-            document.getElementById('modalBody').innerHTML = transcripts[semester];
-            document.getElementById('transcriptModal').style.display = "block";
-            document.body.style.overflow = "hidden";
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = "none";
-            document.body.style.overflow = "auto";
-        }
-
-        window.onclick = function(event) {
-            if (event.target.className === 'modal') {
-                event.target.style.display = "none";
-                document.body.style.overflow = "auto";
-            }
-        }
-    </script>
 
 </body>
 </html>
