@@ -8,172 +8,183 @@
 
 <style>
 
-:root{
-    --primary:#0b3d5c;
-    --secondary:#156082;
-    --accent:#d99a2b;
-    --text:#333;
-    --background:#f7fafc;
-    --white:#ffffff;
+:root {
+
+--primary-color:#164863;      /* Petroleum Blue */
+--secondary-color:#427D9D;
+--accent-color:#D4A017;       /* Oil Gold */
+--text-color:#333;
+--bg-color:#F5F9FC;
+--white:#ffffff;
+
 }
 
 
-*{
-    box-sizing:border-box;
-    scroll-behavior:smooth;
+* {
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 
-body{
-    margin:0;
-    font-family:'Segoe UI',Arial,sans-serif;
-    background:var(--background);
-    color:var(--text);
-    line-height:1.7;
+body {
+
+font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+margin:0;
+color:var(--text-color);
+line-height:1.7;
+background:var(--bg-color);
+
 }
+
 
 
 /* Navigation */
 
-nav{
+nav {
 
-    background:white;
-    box-shadow:0 3px 12px rgba(0,0,0,0.08);
-    position:sticky;
-    top:0;
-    z-index:1000;
-
-}
-
-
-.nav-container{
-
-    width:90%;
-    max-width:1150px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 0;
+background:var(--white);
+color:var(--primary-color);
+padding:1rem 0;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
 
 }
 
 
-.logo{
+.nav-container {
 
-    font-size:1.5rem;
-    font-weight:700;
-    color:var(--primary);
-
-}
-
-
-.nav-links a{
-
-    text-decoration:none;
-    color:var(--primary);
-    margin-left:25px;
-    font-weight:600;
+width:90%;
+max-width:1150px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
 
 }
 
 
+.logo {
 
-/* Hero Section */
-
-
-header{
-
-    min-height:90vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:white;
-
-    background:
-
-    linear-gradient(
-    rgba(5,35,55,0.65),
-    rgba(5,35,55,0.65)
-    ),
-
-    url("https://images.unsplash.com/photo-1516939884455-1445c8652f83")
-    center/cover;
-
-    padding:40px 20px;
+font-size:1.5rem;
+font-weight:700;
+color:var(--primary-color);
 
 }
 
 
-.hero-content{
+.nav-links a {
 
-    max-width:850px;
-
-}
-
-
-.hero-content h1{
-
-    font-size:3.2rem;
-    margin-bottom:20px;
+color:var(--primary-color);
+text-decoration:none;
+margin-left:20px;
+font-weight:600;
 
 }
 
 
-.hero-content p{
 
-    font-size:1.2rem;
+/* Petroleum Hero Wallpaper */
+
+header {
+
+min-height:88vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:40px 20px;
+
+
+background:
+
+linear-gradient(
+rgba(22,72,99,0.65),
+rgba(22,72,99,0.65)
+),
+
+url("https://images.unsplash.com/photo-1565689157206-0fddef7589a2")
+
+center/cover;
+
+
+background-position:center;
 
 }
 
 
-.btn{
 
-    display:inline-block;
-    margin-top:25px;
-    padding:12px 35px;
-    background:var(--accent);
-    color:white;
-    text-decoration:none;
-    border-radius:30px;
-    font-weight:bold;
+.hero-content {
+
+max-width:850px;
 
 }
+
+
+.hero-content h1 {
+
+font-size:3rem;
+margin-bottom:15px;
+
+}
+
+
+
+/* Button */
+
+.btn {
+
+display:inline-block;
+background:var(--accent-color);
+color:white;
+padding:12px 30px;
+text-decoration:none;
+border-radius:5px;
+margin-top:20px;
+font-weight:600;
+
+}
+
 
 
 /* Sections */
 
+section {
 
-section{
-
-    width:90%;
-    max-width:1150px;
-    margin:auto;
-    padding:75px 0;
-
-}
-
-
-h2{
-
-    text-align:center;
-    color:var(--primary);
-    font-size:2.3rem;
-    margin-bottom:40px;
+width:90%;
+max-width:1150px;
+margin:auto;
+padding:80px 0;
 
 }
 
 
+h2 {
 
-.card{
+text-align:center;
+color:var(--primary-color);
+font-size:2.2rem;
+margin-bottom:40px;
 
-    background:white;
-    padding:35px;
-    border-radius:15px;
+}
 
-    box-shadow:
-    0 8px 25px rgba(0,0,0,0.08);
+
+
+.about-card,
+.education-card,
+.contact-card {
+
+
+background:white;
+padding:30px;
+border-radius:10px;
+
+
+box-shadow:
+
+0 5px 18px rgba(0,0,0,0.08);
 
 }
 
@@ -181,47 +192,28 @@ h2{
 
 /* Table */
 
+table {
 
-table{
-
-    width:100%;
-    border-collapse:collapse;
-
-}
-
-
-th{
-
-    background:var(--primary);
-    color:white;
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
 
 }
 
 
-th,td{
+th {
 
-    padding:15px;
-    text-align:left;
-    border-bottom:1px solid #ddd;
-
-}
-
-
-
-/* Contact */
-
-
-.contact{
-
-    text-align:center;
+background:var(--primary-color);
+color:white;
 
 }
 
 
-.contact a{
+th,td {
 
-    color:var(--secondary);
-    font-weight:bold;
+padding:15px;
+border-bottom:1px solid #eee;
+text-align:left;
 
 }
 
@@ -229,44 +221,17 @@ th,td{
 
 /* Footer */
 
+footer {
 
-footer{
-
-    background:var(--primary);
-    color:white;
-    text-align:center;
-    padding:25px;
-
-}
-
-
-
-@media(max-width:700px){
-
-.nav-container{
-
-flex-direction:column;
+background:var(--primary-color);
+color:white;
+text-align:center;
+padding:20px;
 
 }
 
-
-.nav-links{
-
-margin-top:15px;
-
-}
-
-
-.hero-content h1{
-
-font-size:2.2rem;
-
-}
-
-}
 
 </style>
-
 
 </head>
 
@@ -279,7 +244,7 @@ font-size:2.2rem;
 <div class="nav-container">
 
 <div class="logo">
-Kalana Portfolio
+Portfolio
 </div>
 
 
@@ -300,10 +265,10 @@ Kalana Portfolio
 
 
 
-
 <header>
 
 <div class="hero-content">
+
 
 <h1>
 Hi, I'm Kalana Karunarathna
@@ -311,8 +276,7 @@ Hi, I'm Kalana Karunarathna
 
 
 <p>
-Chemical and Process Engineering Undergraduate at the University of Moratuwa,
-interested in process design, simulation and petroleum related industrial systems.
+Chemical and Process Engineering Undergraduate at the University of Moratuwa with a focus on process design and industrial systems.
 </p>
 
 
@@ -323,9 +287,7 @@ Contact Me
 
 </div>
 
-
 </header>
-
 
 
 
@@ -338,15 +300,11 @@ About Me
 </h2>
 
 
-<div class="card">
+<div class="about-card">
 
 
 <p>
-
-I am a Chemical and Process Engineering undergraduate at the University of Moratuwa.
-My interests include thermodynamics, process simulation, energy systems,
-and the technical aspects of the oil and gas industry.
-
+I am a Chemical and Process Engineering undergraduate at the University of Moratuwa. I have a strong interest in thermodynamics, process simulation, and the technical aspects of the oil and gas industry.
 </p>
 
 
@@ -354,8 +312,6 @@ and the technical aspects of the oil and gas industry.
 
 
 </section>
-
-
 
 
 
@@ -368,7 +324,7 @@ Academic Performance
 </h2>
 
 
-<div class="card">
+<div class="education-card">
 
 
 <table>
@@ -438,8 +394,6 @@ Heat & Mass Transfer, Chemical Thermodynamics
 
 
 
-
-
 <section id="contact">
 
 
@@ -448,14 +402,18 @@ Get In Touch
 </h2>
 
 
-<div class="card contact">
+<div class="contact-card" style="text-align:center;">
 
 
 <p>
 Email:
+
 <a href="mailto:karunarathnamgkv.23@uom.lk">
+
 karunarathnamgkv.23@uom.lk
+
 </a>
+
 </p>
 
 
@@ -466,15 +424,15 @@ karunarathnamgkv.23@uom.lk
 
 
 
-
-
 <footer>
 
 <p>
-© 2026 Kalana Karunarathna
+&copy; 2026 Kalana Karunarathna.
 </p>
 
+
 </footer>
+
 
 
 </body>
