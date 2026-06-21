@@ -1,151 +1,481 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalana Karunarathna | Portfolio</title>
-    <style>
-        :root {
-            --primary-color: #1a2a3a; /* Petroleum Slate */
-            --secondary-color: #2c3e50;
-            --accent-color: #d35400; /* Industrial Orange */
-            --text-color: #333;
-            --bg-color: #f4f7f6;
-            --white: #ffffff;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        * { box-sizing: border-box; scroll-behavior: smooth; }
+<title>Kalana Karunarathna | Portfolio</title>
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            color: var(--text-color);
-            line-height: 1.7;
-            background: var(--bg-color);
-        }
+<style>
 
-        nav {
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+:root{
+    --primary:#0b3d5c;
+    --secondary:#156082;
+    --accent:#d99a2b;
+    --text:#333;
+    --background:#f7fafc;
+    --white:#ffffff;
+}
 
-        .nav-container {
-            width: 90%;
-            max-width: 1150px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
 
-        .logo { font-size: 1.5rem; font-weight: 700; }
+*{
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
 
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: 500;
-        }
 
-        header {
-            min-height: 88vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--white);
-            padding: 40px 20px;
-            /* Petroleum Industry themed background */
-            background: linear-gradient(rgba(26, 42, 58, 0.8), rgba(26, 42, 58, 0.8)),
-                        url('https://images.unsplash.com/photo-1580587816470-b523604f3265?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-        }
+body{
+    margin:0;
+    font-family:'Segoe UI',Arial,sans-serif;
+    background:var(--background);
+    color:var(--text);
+    line-height:1.7;
+}
 
-        .hero-content { max-width: 850px; }
-        .hero-content h1 { font-size: 3rem; margin-bottom: 15px; }
 
-        .btn {
-            display: inline-block;
-            background: var(--accent-color);
-            color: var(--white);
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            font-weight: 600;
-        }
+/* Navigation */
 
-        section { width: 90%; max-width: 1150px; margin: auto; padding: 80px 0; }
-        h2 { text-align: center; color: var(--primary-color); font-size: 2.2rem; margin-bottom: 40px; }
+nav{
 
-        .about-card, .education-card, .contact-card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
+    background:white;
+    box-shadow:0 3px 12px rgba(0,0,0,0.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
 
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { padding: 15px; border-bottom: 1px solid #eee; text-align: left; }
-        
-        footer { background: var(--primary-color); color: white; text-align: center; padding: 20px; }
-    </style>
+}
+
+
+.nav-container{
+
+    width:90%;
+    max-width:1150px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+
+}
+
+
+.logo{
+
+    font-size:1.5rem;
+    font-weight:700;
+    color:var(--primary);
+
+}
+
+
+.nav-links a{
+
+    text-decoration:none;
+    color:var(--primary);
+    margin-left:25px;
+    font-weight:600;
+
+}
+
+
+
+/* Hero Section */
+
+
+header{
+
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+
+    background:
+
+    linear-gradient(
+    rgba(5,35,55,0.65),
+    rgba(5,35,55,0.65)
+    ),
+
+    url("https://images.unsplash.com/photo-1516939884455-1445c8652f83")
+    center/cover;
+
+    padding:40px 20px;
+
+}
+
+
+.hero-content{
+
+    max-width:850px;
+
+}
+
+
+.hero-content h1{
+
+    font-size:3.2rem;
+    margin-bottom:20px;
+
+}
+
+
+.hero-content p{
+
+    font-size:1.2rem;
+
+}
+
+
+.btn{
+
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 35px;
+    background:var(--accent);
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+
+}
+
+
+/* Sections */
+
+
+section{
+
+    width:90%;
+    max-width:1150px;
+    margin:auto;
+    padding:75px 0;
+
+}
+
+
+h2{
+
+    text-align:center;
+    color:var(--primary);
+    font-size:2.3rem;
+    margin-bottom:40px;
+
+}
+
+
+
+.card{
+
+    background:white;
+    padding:35px;
+    border-radius:15px;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,0.08);
+
+}
+
+
+
+/* Table */
+
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+
+th{
+
+    background:var(--primary);
+    color:white;
+
+}
+
+
+th,td{
+
+    padding:15px;
+    text-align:left;
+    border-bottom:1px solid #ddd;
+
+}
+
+
+
+/* Contact */
+
+
+.contact{
+
+    text-align:center;
+
+}
+
+
+.contact a{
+
+    color:var(--secondary);
+    font-weight:bold;
+
+}
+
+
+
+/* Footer */
+
+
+footer{
+
+    background:var(--primary);
+    color:white;
+    text-align:center;
+    padding:25px;
+
+}
+
+
+
+@media(max-width:700px){
+
+.nav-container{
+
+flex-direction:column;
+
+}
+
+
+.nav-links{
+
+margin-top:15px;
+
+}
+
+
+.hero-content h1{
+
+font-size:2.2rem;
+
+}
+
+}
+
+</style>
+
+
 </head>
+
+
 <body>
 
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Portfolio</div>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#education">Academic</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </div>
-    </nav>
 
-    <header>
-        <div class="hero-content">
-            <h1>Hi, I'm Kalana Karunarathna</h1>
-            <p>Chemical and Process Engineering Undergraduate at the University of Moratuwa with a focus on process design and industrial systems.</p>
-            <a href="#contact" class="btn">Contact Me</a>
-        </div>
-    </header>
+<nav>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <div class="about-card">
-            <p>I am a Chemical and Process Engineering undergraduate at the University of Moratuwa. I have a strong interest in thermodynamics, process simulation, and the technical aspects of the oil and gas industry.</p>
-        </div>
-    </section>
+<div class="nav-container">
 
-    <section id="education">
-        <h2>Academic Performance</h2>
-        <div class="education-card">
-            <table>
-                <tr><th>Semester</th><th>Highlights</th></tr>
-                <tr><td>Semester 1</td><td>Fluid Mechanics, Programming Fundamentals</td></tr>
-                <tr><td>Semester 2</td><td>Engineering Thermodynamics, Bioprocess Principles</td></tr>
-                <tr><td>Semester 3</td><td>Heat & Mass Transfer, Chemical Thermodynamics</td></tr>
-            </table>
-        </div>
-    </section>
+<div class="logo">
+Kalana Portfolio
+</div>
 
-    <section id="contact">
-        <h2>Get In Touch</h2>
-        <div class="contact-card" style="text-align: center;">
-            <p>Email: <a href="mailto:karunarathnamgkv.23@uom.lk">karunarathnamgkv.23@uom.lk</a></p>
-        </div>
-    </section>
 
-    <footer>
-        <p>&copy; 2026 Kalana Karunarathna.</p>
-    </footer>
+<div class="nav-links">
+
+<a href="#about">About</a>
+
+<a href="#education">Academic</a>
+
+<a href="#contact">Contact</a>
+
+</div>
+
+
+</div>
+
+</nav>
+
+
+
+
+<header>
+
+<div class="hero-content">
+
+<h1>
+Hi, I'm Kalana Karunarathna
+</h1>
+
+
+<p>
+Chemical and Process Engineering Undergraduate at the University of Moratuwa,
+interested in process design, simulation and petroleum related industrial systems.
+</p>
+
+
+<a href="#contact" class="btn">
+Contact Me
+</a>
+
+
+</div>
+
+
+</header>
+
+
+
+
+
+<section id="about">
+
+
+<h2>
+About Me
+</h2>
+
+
+<div class="card">
+
+
+<p>
+
+I am a Chemical and Process Engineering undergraduate at the University of Moratuwa.
+My interests include thermodynamics, process simulation, energy systems,
+and the technical aspects of the oil and gas industry.
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section id="education">
+
+
+<h2>
+Academic Performance
+</h2>
+
+
+<div class="card">
+
+
+<table>
+
+
+<tr>
+
+<th>
+Semester
+</th>
+
+<th>
+Highlights
+</th>
+
+</tr>
+
+
+<tr>
+
+<td>
+Semester 1
+</td>
+
+<td>
+Fluid Mechanics, Programming Fundamentals
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Semester 2
+</td>
+
+<td>
+Engineering Thermodynamics, Bioprocess Principles
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Semester 3
+</td>
+
+<td>
+Heat & Mass Transfer, Chemical Thermodynamics
+</td>
+
+</tr>
+
+
+</table>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section id="contact">
+
+
+<h2>
+Get In Touch
+</h2>
+
+
+<div class="card contact">
+
+
+<p>
+Email:
+<a href="mailto:karunarathnamgkv.23@uom.lk">
+karunarathnamgkv.23@uom.lk
+</a>
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<footer>
+
+<p>
+© 2026 Kalana Karunarathna
+</p>
+
+</footer>
+
 
 </body>
 </html>
