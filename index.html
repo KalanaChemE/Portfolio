@@ -160,7 +160,6 @@
 
         .about-card,
         .education-card,
-        .project-card,
         .skill-card,
         .certification-card,
         .contact-card {
@@ -220,47 +219,6 @@
             border-radius: 5px;
             font-weight: 600;
             color: var(--primary-color);
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-            gap: 24px;
-        }
-
-        .project-card {
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
-        }
-
-        .card-content {
-            padding: 26px;
-        }
-
-        .card-content h3 {
-            color: var(--primary-color);
-            margin-top: 0;
-            margin-bottom: 12px;
-            font-size: 1.28rem;
-        }
-
-        .tech-stack {
-            font-size: 0.93rem;
-            color: var(--muted-text);
-            font-style: italic;
-            margin-top: 14px;
-        }
-
-        .small-btn {
-            padding: 8px 14px;
-            font-size: 0.8rem;
-            margin-top: 10px;
-            margin-right: 8px;
         }
 
         .skills-grid {
@@ -381,13 +339,6 @@
             animation: modalFade 0.25s ease;
         }
 
-        .pfd-content {
-            max-width: 900px;
-            text-align: center;
-            background: none;
-            box-shadow: none;
-        }
-
         @keyframes modalFade {
             from { opacity: 0; transform: translateY(-18px); }
             to { opacity: 1; transform: translateY(0); }
@@ -469,7 +420,6 @@
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#education">Academic</a>
-                <a href="#projects">Projects</a>
                 <a href="#skills">Skills</a>
                 <a href="#contact">Contact</a>
             </div>
@@ -484,8 +434,7 @@
                 with interests in process design, thermodynamics, simulation, and industrial problem solving.
             </p>
             <div class="hero-buttons">
-                <a href="#projects" class="btn">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                <a href="#contact" class="btn">Contact Me</a>
             </div>
         </div>
     </header>
@@ -493,7 +442,7 @@
     <section id="about">
         <h2>About Me</h2>
         <p class="section-intro">
-            A motivated engineering undergraduate building strong foundations in chemical and process engineering through academics, projects, and technical tools.
+            A motivated engineering undergraduate building strong foundations in chemical and process engineering through academics and technical tools.
         </p>
         <div class="about-card">
             <p>
@@ -550,58 +499,6 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2>Key Projects</h2>
-        <p class="section-intro">
-            Selected academic and technical projects that reflect my understanding of engineering principles and process analysis.
-        </p>
-        <div class="projects-grid">
-
-            <div class="project-card">
-                <div class="card-content">
-                    <h3>Heat Exchanger Design (CH2015)</h3>
-                    <p>
-                        Designed a shell-and-tube heat exchanger for a defined process requirement by carrying out thermal analysis and engineering calculations.
-                        Applied the <strong>LMTD</strong> and <strong>&epsilon;-NTU</strong> methods to evaluate heat duty,
-                        estimate overall heat transfer performance, and calculate pressure drops for a practical engineering design.
-                    </p>
-                    <p class="tech-stack">Focus: Heat &amp; Mass Transfer, Thermal Design, Fluid Dynamics</p>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="card-content">
-                    <h3>Industrial Soap Production Design (CH2170)</h3>
-                    <p>
-                        Performed laboratory-scale saponification using coconut oil to evaluate soap yield
-                        <strong>(12.44%)</strong> and product quality <strong>(pH 8)</strong>.
-                        Extended the study into an industrial process design by preparing a
-                        <strong>Block Flow Diagram (BFD)</strong> and a detailed
-                        <strong>Process Flow Diagram (PFD)</strong> to identify unit operations,
-                        material flow paths, and design considerations for scale-up.
-                    </p>
-                    <p class="tech-stack">Tools &amp; Skills: EDraw Max, Mass Balance Calculations, Process Design</p>
-                    <button onclick="showPFD()" class="btn small-btn">View PFD</button>
-                    <button onclick="showGallery()" class="btn small-btn" style="background:#4a5568; box-shadow:none;">Process Walkthrough</button>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="card-content">
-                    <h3>Beer Brewing Process Optimization</h3>
-                    <p>
-                        Analyzed fermentation kinetics and temperature control requirements for a large-scale beer brewing process,
-                        focusing on process stability, microbial performance, and production efficiency.
-                        Reviewed the relationship between operating conditions and process behavior to understand
-                        how bioprocess parameters influence industrial-scale performance.
-                    </p>
-                    <p class="tech-stack">Tools: Process Flow Diagrams (PFD), Microbiology</p>
-                </div>
-            </div>
-
         </div>
     </section>
 
@@ -663,8 +560,7 @@
             <div class="contact-card">
                 <h4>Portfolio Note</h4>
                 <p>
-                    This portfolio highlights my academic performance, engineering projects,
-                    technical skills, and professional development as an undergraduate engineer.
+                    This portfolio highlights my academic performance, technical skills, and professional development as an undergraduate engineer.
                 </p>
             </div>
         </div>
@@ -674,30 +570,6 @@
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('transcriptModal')">&times;</span>
             <div id="modalBody" class="modal-body"></div>
-        </div>
-    </div>
-
-    <div id="pfdModal" class="modal">
-        <div class="modal-content pfd-content">
-            <span class="close-btn" onclick="closeModal('pfdModal')" style="color: white; top: -30px;">&times;</span>
-            <img src="soap-pfd.png" alt="Industrial Soap PFD" style="max-width:100%; border: 5px solid white; border-radius: 8px;">
-            <p style="color:white; margin-top:10px;">Industrial Soap Manufacturing Process - CH2170 Lab Practice</p>
-        </div>
-    </div>
-
-    <div id="galleryModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('galleryModal')">&times;</span>
-            <div class="modal-body">
-                <h4>Soap Production Process Walkthrough</h4>
-                <ul class="grade-list" style="max-height: 400px; overflow-y: auto; text-align: left;">
-                    <li><strong>1. Raw Material Measurement:</strong> <span>Precision weighing of 15g NaOH and 15g NaCl using analytical balances.</span></li>
-                    <li><strong>2. Lye Preparation:</strong> <span>Dissolving NaOH in 50ml distilled water.</span></li>
-                    <li><strong>3. Saponification:</strong> <span>Heating coconut oil and lye solution to 85°C while stirring for 12 minutes.</span></li>
-                    <li><strong>4. Salting Out:</strong> <span>Adding NaCl solution to separate soap curds from glycerol and unreacted alkali.</span></li>
-                    <li><strong>5. Testing:</strong> <span>pH analysis confirming a safe value of 8 for consumer use.</span></li>
-                </ul>
-            </div>
         </div>
     </div>
 
@@ -715,16 +587,6 @@
         function showTranscript(semester) {
             document.getElementById('modalBody').innerHTML = transcripts[semester];
             document.getElementById('transcriptModal').style.display = "block";
-            document.body.style.overflow = "hidden";
-        }
-
-        function showPFD() {
-            document.getElementById('pfdModal').style.display = "block";
-            document.body.style.overflow = "hidden";
-        }
-
-        function showGallery() {
-            document.getElementById('galleryModal').style.display = "block";
             document.body.style.overflow = "hidden";
         }
 
