@@ -160,6 +160,8 @@
 
         .about-card,
         .education-card,
+        .skill-card,
+        .certification-card,
         .contact-card {
             background: var(--white);
             border-radius: 16px;
@@ -219,15 +221,71 @@
             color: var(--primary-color);
         }
 
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 28px;
+        }
+
+        .skill-card,
+        .certification-card,
         .contact-card {
             padding: 24px;
         }
 
+        .skill-card h4,
+        .certification-card h4,
         .contact-card h4 {
             margin-top: 0;
             margin-bottom: 12px;
             color: var(--primary-color);
             font-size: 1.2rem;
+        }
+
+        .certification-card {
+            border-left: 6px solid var(--accent-color);
+        }
+
+        .certification-subtitle {
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 12px;
+            font-size: 1.02rem;
+        }
+
+        .certificate-link {
+            display: inline-block;
+            margin-top: 14px;
+            color: white;
+            background: var(--accent-color);
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.92rem;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .certificate-link:hover {
+            background: #168a85;
+            transform: translateY(-2px);
+        }
+
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .skill-tag {
+            background: #dff6f4;
+            color: var(--primary-color);
+            padding: 10px 16px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 0.92rem;
         }
 
         .contact-grid {
@@ -346,6 +404,8 @@
             }
 
             .about-card,
+            .skill-card,
+            .certification-card,
             .contact-card {
                 padding: 20px;
             }
@@ -360,6 +420,7 @@
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#education">Academic</a>
+                <a href="#skills">Skills</a>
                 <a href="#contact">Contact</a>
             </div>
         </div>
@@ -441,6 +502,45 @@
         </div>
     </section>
 
+    <section id="skills">
+        <h2>Skills & Certifications</h2>
+        <p class="section-intro">
+            A combination of engineering knowledge, technical tools, and professional learning that supports my development as an engineer.
+        </p>
+
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h4>Engineering Software</h4>
+                <p>Aspen Plus, SolidWorks, SolidEdge, Python, EDraw Max, MS Word, MS Excel</p>
+            </div>
+
+            <div class="certification-card">
+                <h4>Certification</h4>
+                <p class="certification-subtitle">AIChE Academy – ELA953 SAChE Certificate Program</p>
+                <p><strong>Course:</strong> An Introduction to Managing Process Safety Hazards</p>
+                <p><strong>Issued by:</strong> AIChE Academy / CCPS</p>
+                <p><strong>Date:</strong> March 15, 2026</p>
+                <p>
+                    Completed a professional certificate focused on process safety fundamentals,
+                    hazard identification, and safe engineering practices relevant to chemical
+                    and process industries.
+                </p>
+                <a href="aiche-certificate.pdf" target="_blank" class="certificate-link">View Certificate</a>
+            </div>
+        </div>
+
+        <div class="skills-container">
+            <span class="skill-tag">Thermodynamics</span>
+            <span class="skill-tag">Heat Transfer</span>
+            <span class="skill-tag">Process Control</span>
+            <span class="skill-tag">Mass Balance</span>
+            <span class="skill-tag">Fluid Mechanics</span>
+            <span class="skill-tag">Linear Algebra</span>
+            <span class="skill-tag">Process Design</span>
+            <span class="skill-tag">Engineering Calculations</span>
+        </div>
+    </section>
+
     <section id="contact">
         <h2>Get In Touch</h2>
         <p class="section-intro">
@@ -460,7 +560,7 @@
             <div class="contact-card">
                 <h4>Portfolio Note</h4>
                 <p>
-                    This portfolio highlights my academic performance and professional development as an undergraduate engineer.
+                    This portfolio highlights my academic performance, technical skills, and professional development as an undergraduate engineer.
                 </p>
             </div>
         </div>
